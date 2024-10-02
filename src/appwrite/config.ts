@@ -66,7 +66,11 @@ export class AppwriteService {
         try {
             return await account.deleteSession("current")
         } catch (error) {
-        console.log("logout error"+error)
+            console.log("logout error" + error)
         }
     }
 }
+//making it one time usable 
+const appwriteservice = new AppwriteService()
+
+export default appwriteservice
