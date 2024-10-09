@@ -3,7 +3,8 @@ import appwriteService from "@/appwrite/config";
 import { Models } from "appwrite";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Avatar from "./avatar";
+import Avatar from "./Avatar";
+
 
 const ProfileCard= () => {
     const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null);

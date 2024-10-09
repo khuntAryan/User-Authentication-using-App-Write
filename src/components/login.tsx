@@ -3,11 +3,11 @@ import appwriteService from "@/appwrite/config";
 import useAuth from "@/context/useAuth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, {FormEvent, useState} from "react";
+import React, { FormEvent, useState } from "react";
 
 const Login = () => {
     const router = useRouter()
-    const {setAuthStatus} = useAuth()
+    const { setAuthStatus } = useAuth()
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -15,19 +15,21 @@ const Login = () => {
     const [error, setError] = useState("")
 
     const login = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+        e.preventDefault();
         try {
             const session = await appwriteService.login(formData);
+            console.log("Session: ", session); // Check if login succeeds
             if (session) {
-                setAuthStatus(true)
-                router.push("/profile")
+                setAuthStatus(true);
+                console.log("Redirecting to profile");
+                router.push("/profile"); // Redirect to profile
             }
-                
-            
         } catch (error: any) {
-            setError(error.message)
+            console.error("Login Error: ", error); // Log the error
+            setError(error.message);
         }
-    }
+    };
+    
 
     return (
         <div className="flex items-center justify-center w-full">
