@@ -34,3 +34,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Algorithm 
+First Step -> config file, verify your project url and project id
+Second Step -> Set the context , value where activity is stored for the user 
+Third Step -> set the appwrite [ config ] , it talks with the appwrite , write logic for each event , login-logout etc.
+Fourth Step -> make components , how the page will look, main logic lies here 
+Fifth Step -> combining all the components 
